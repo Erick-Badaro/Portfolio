@@ -17,9 +17,9 @@ export default function About() {
           </p>
 
           <h2 className="mb-8 text-4xl font-bold leading-tight md:text-5xl">
-            Transformando ideias em{" "}
+            Construindo a base por trás das {" "}
             <span className="bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500 bg-clip-text text-transparent">
-              experiências digitais
+              aplicações
             </span>
           </h2>
 
