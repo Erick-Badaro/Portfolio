@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   FaReact,
   FaDocker,
@@ -34,6 +35,25 @@ export default function Skills(){
     { name: "AWS", icon: <SiAmazonwebservices/> },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.06,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 14, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.45, ease: "easeOut" },
+    },
+  };
+
     return (
     <section className="py-24 px-6 bg-[#05070d]">
       <div className="max-w-6xl mx-auto text-center">
@@ -50,10 +70,17 @@ export default function Skills(){
           com foco em backend e boas práticas.
         </p>
 
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.18 }}
+          className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        >
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
               className="group flex flex-col items-center justify-center 
               p-6 rounded-2xl border border-white/10 
               bg-white/5 backdrop-blur-sm
@@ -67,9 +94,9 @@ export default function Skills(){
               <span className="mt-3 text-sm font-medium text-gray-300">
                 {skill.name}
               </span>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
