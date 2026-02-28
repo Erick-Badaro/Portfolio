@@ -64,8 +64,8 @@ export default function Hero() {
         </motion.div>
 
         <p className="mx-auto mb-10 max-w-2xl text-slate-200">
-          Desenvolvendo soluções escaláveis, performáticas e centradas no
-          usuário. Transformando ideias em produtos digitais reais.
+          Desenvolvo aplicações modernas com foco em performance, organização e boas práticas. 
+          Acredito que tecnologia bem aplicada resolve problemas reais.
         </p>
 
         <div className="flex justify-center gap-6">
