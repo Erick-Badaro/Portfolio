@@ -55,7 +55,7 @@ export default function Skills(){
   };
 
     return (
-    <section className="py-24 px-6 bg-[#05070d]">
+    <section id="skills" className="py-24 px-6 bg-[#05070d]">
       <div className="max-w-6xl mx-auto text-center">
         <span className="text-sm tracking-widest text-cyan-400 uppercase">
           Minhas Skills

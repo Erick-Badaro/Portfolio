@@ -18,7 +18,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05070d] text-white">
+    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05070d] text-white">
       {/* GRID BACKGROUND */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a1a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a1a_1px,transparent_1px)] bg-[size:60px_60px]" />
 

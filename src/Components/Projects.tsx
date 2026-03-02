@@ -33,7 +33,7 @@ export default function Projects() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#05070d]">
+    <section id="projetos" className="py-24 px-6 bg-[#05070d]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center">
