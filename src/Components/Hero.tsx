@@ -1,11 +1,19 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
-
+import { registerCVDownload } from "../services/downloadService";
 
 export default function Hero() {
   const [text, setText] = useState("");
   const fullText = "Software Engineer";
+
+  const handleDownload = async () => {
+    try {
+      await registerCVDownload();
+    } catch (error) {
+      console.error("Erro ao registrar download:", error);
+    }
+  };
 
   // efeito de digitação
   useEffect(() => {
@@ -20,7 +28,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05070d] text-white">
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05070d] text-white"
+    >
       {/* GRID BACKGROUND */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a1a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a1a_1px,transparent_1px)] bg-[size:60px_60px]" />
 
@@ -66,8 +77,9 @@ export default function Hero() {
         </motion.div>
 
         <p className="mx-auto mb-10 max-w-2xl text-slate-200">
-          Desenvolvo aplicações modernas com foco em performance, organização e boas práticas. 
-          Acredito que tecnologia bem aplicada resolve problemas reais.
+          Desenvolvo aplicações modernas com foco em performance, organização e
+          boas práticas. Acredito que tecnologia bem aplicada resolve problemas
+          reais.
         </p>
 
         <div className="flex justify-center gap-6">
@@ -89,11 +101,11 @@ export default function Hero() {
             href="./public/erick-badaro-software-engineer.pdf"
             download
             className="rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500 px-6 py-3 font-semibold text-black shadow-[0_10px_40px_rgba(56,189,248,0.5)] transition duration-300 hover:scale-105 flex items-center gap-2 animate-pulse"
+            onClick={handleDownload}
           >
             <ArrowDown className="w-4 h-4" />
             Baixar CV
           </a>
-
         </div>
 
         {/* ICONS: GitHub / LinkedIn / Email */}
