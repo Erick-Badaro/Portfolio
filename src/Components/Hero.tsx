@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { ArrowDown } from "lucide-react";
+
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -82,6 +84,16 @@ export default function Hero() {
           >
             Contato
           </a>
+
+          <a
+            href="./public/erick-badaro-software-engineer.pdf"
+            download
+            className="rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500 px-6 py-3 font-semibold text-black shadow-[0_10px_40px_rgba(56,189,248,0.5)] transition duration-300 hover:scale-105 flex items-center gap-2 animate-pulse"
+          >
+            <ArrowDown className="w-4 h-4" />
+            Baixar CV
+          </a>
+
         </div>
 
         {/* ICONS: GitHub / LinkedIn / Email */}
