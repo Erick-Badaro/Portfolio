@@ -1,30 +1,20 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-    },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendDownloadNotification = async (downloadInfo) => {
-    const {userAgent, downloadDate} = downloadInfo;
+    const { userAgent, downloadDate } = downloadInfo;
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
+    await resend.emails.send({
+        from: "Portfolio <onboarding@resend.dev>",
         to: process.env.NOTIFY_EMAIL,
         subject: "📥 Novo Download do CV!",
         html: `
-                <h2> Alguém baixou seu CV!</h2>
-                <p><strong> Data:</strong> ${downloadDate.toLocaleString("pt-BR")}</p>
-                <p><strong>Navegador:</strong> ${userAgent}</p>        
+            <h2>Alguém baixou seu CV!</h2>
+            <p><strong>Data:</strong> ${downloadDate.toLocaleString("pt-BR")}</p>
+            <p><strong>Navegador:</strong> ${userAgent}</p>        
         `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
 };
 
-module.exports = {sendDownloadNotification};
+module.exports = { sendDownloadNotification };
