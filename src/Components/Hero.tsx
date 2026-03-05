@@ -54,7 +54,7 @@ export default function Hero() {
 
         <h1 className="mb-6 text-5xl font-bold md:text-7xl">
           <span className="bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500 bg-clip-text text-transparent">
-            Erick Badaró
+            Erick Badarós
           </span>
         </h1>
 
