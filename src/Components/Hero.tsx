@@ -98,7 +98,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="./public/erick-badaro-software-engineer.pdf"
+            href="erick-badaro-software-engineer.pdf"
             download
             className="rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500 px-6 py-3 font-semibold text-black shadow-[0_10px_40px_rgba(56,189,248,0.5)] transition duration-300 hover:scale-105 flex items-center gap-2 animate-pulse"
             onClick={handleDownload}
