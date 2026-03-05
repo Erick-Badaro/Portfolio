@@ -4,7 +4,7 @@ Além de ser um site de apresentação, este projeto também inclui uma feature 
 
 🌐 Acesse o projeto
 
-🔗 Portfolio: 
+🔗 Portfolio: https://portfolioerickbadaro.vercel.app/
 
 # ✨ Funcionalidades
 
@@ -26,23 +26,49 @@ Sistema Full Stack de monitoramento de downloads
 
 # 🧠 Feature Full Stack — Monitoramento de Download do CV
 
-Quando alguém baixa o meu currículo, o sistema executa automaticamente:
+Quando alguém baixa o meu currículo, o sistema executa automaticamente o seguinte fluxo:
 
-O frontend envia uma requisição para a API
+1️⃣ O frontend (React) envia uma requisição POST para a API informando que o download foi realizado.
 
-A API registra o download no MongoDB
+2️⃣ O backend (Node.js + Express) recebe essa requisição e cria um registro no banco de dados.
 
-O backend captura informações do visitante:
+3️⃣ O download é persistido no MongoDB, armazenando algumas informações úteis para análise:
 
-data
+📅 Data do download
 
-hora
+⏰ Hora do download
 
-user-agent
+🖥️ User-Agent do navegador
 
-Um e-mail automático é enviado para mim notificando o download
+4️⃣ Após salvar os dados no banco, o backend dispara um e-mail automático utilizando o Resend, notificando que alguém baixou o currículo.
 
-Isso permite acompanhar o interesse pelo currículo de forma simples e sem coletar dados sensíveis, respeitando boas práticas de privacidade.
+Esse fluxo cria um pequeno sistema de observabilidade de interesse no currículo, permitindo acompanhar downloads em tempo real sem coletar dados sensíveis, respeitando boas práticas de privacidade.
+
+# 🏗️ Arquitetura da aplicação
+
+O projeto foi dividido em Frontend e Backend, com deploy em serviços diferentes.
+
+Frontend
+
+Hospedado na Vercel
+
+Responsável pela interface e interações do usuário
+
+Backend
+
+Hospedado na Render
+
+Responsável por:
+
+registrar downloads
+
+integrar com o banco de dados
+
+enviar notificações por e-mail
+
+Serviço de E-mail
+
+Utilizado Resend para envio das notificações de download.
 
 # 🛠️ Tecnologias utilizadas
 Frontend
@@ -57,6 +83,8 @@ Framer Motion
 
 React Icons
 
+Vite
+
 Backend
 
 Node.js
@@ -67,8 +95,30 @@ MongoDB
 
 Mongoose
 
-Nodemailer
+Resend (envio de e-mails)
 
 Dotenv
 
 CORS
+
+# 📦 Infraestrutura / Deploy
+
+Frontend: Vercel
+
+Backend: Render
+
+Banco de dados: MongoDB
+
+Envio de e-mails: Resend
+
+🎯 Objetivo do projeto
+
+Este projeto foi desenvolvido para:
+
+Apresentar meus projetos e habilidades
+
+Demonstrar conhecimento em desenvolvimento Full Stack
+
+Implementar uma integração real entre frontend, backend, banco de dados e serviço externo
+
+Praticar deploy e integração entre serviços em produção.
