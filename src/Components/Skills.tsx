@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import type {Variants} from "framer-motion";
+
 import {
   FaReact,
   FaDocker,
@@ -35,7 +37,7 @@ export default function Skills(){
     { name: "AWS", icon: <SiAmazonwebservices/> },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -44,7 +46,7 @@ export default function Skills(){
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 14, scale: 0.98 },
     visible: {
       opacity: 1,
