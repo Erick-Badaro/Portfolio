@@ -71,7 +71,7 @@ export default function Hero() {
           className="mb-8 flex justify-center"
         >
           <img
-            src="src/assets/erick-badaro2jpg.jpg"
+            src="/erick-badaro2jpg.jpg"
             className="h-40 w-40 rounded-full border border-white/10 object-cover shadow-[0_0_60px_rgba(56,189,248,0.4)]"
           />
         </motion.div>
